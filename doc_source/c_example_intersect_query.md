@@ -11,18 +11,12 @@ Compare the following example with the first UNION example\. The only difference
 ```
 select listid, sellerid, eventid from listing
 intersect
-select listid, sellerid, eventid from sales
-order by listid desc, sellerid, eventid
-limit 5;
+select listid, sellerid, eventid from sales;
 
 listid | sellerid | eventid
 --------+----------+---------
 235494 |    23875 |    8771
-235482 |     1067 |    2667
-235479 |     1589 |    7303
-235476 |    15550 |     793
-235475 |    22306 |    7848
-(5 rows)
+(1 row)
 ```
 
 The following query finds events \(for which tickets were sold\) that occurred at venues in both New York City and Los Angeles in March\. The difference between the two query expressions is the constraint on the VENUECITY column\.
